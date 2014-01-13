@@ -1,0 +1,1 @@
+A simple chat app that uses Node.js, socket.io stack.
