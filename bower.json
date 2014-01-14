@@ -1,10 +1,10 @@
 {
-    "name" : "chatrooms",
-    "version" : "0.1.0",
-    "description" : "chat app",
-    "dependencies" : {
-        "socket.io-client" : "latest",
-        "jquery" : "2.0.3",
-        "bootstrap" : "3.0.3"
-    }
+  "name": "chatrooms",
+  "version": "0.1.0",
+  "description": "chat app",
+  "dependencies": {
+    "socket.io-client": "latest",
+    "bootstrap-css": "latest",
+    "angular": "~1.2.8"
+  }
 }

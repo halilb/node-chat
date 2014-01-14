@@ -4,40 +4,43 @@
 <head>
   <title>chat</title>
 
-  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-css/css/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/chat.css">
 </head>
 
-<body>
+<body ng-controller="ChatCtrl">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <span class="glyphicon glyphicon-comment"></span> Chat
+            <span class="pull-right">Your nickname is: {{nickName}}</span>
           </div>
           <div class="panel-body">
-            <ul class="chat">
-              <li class="left clearfix">
+            <ul id="messages" class="chat">
+              <li ng-repeat="message in messages" class="left clearfix">
                 <div class="chat-body clearfix">
                   <div class="header">
-                    <strong class="primary-font">Jack Sparrow</strong>
+                    <strong class="primary-font">{{message.author}}</strong>
                     <small class="pull-right text-muted">
-                        <span class="glyphicon glyphicon-time"></span>12 mins ago
+                        <span class="glyphicon glyphicon-time"></span>xx mins ago
                     </small>
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.</p>
+                  <p>{{message.content}}</p>
                 </div>
               </li>
             </ul>
           </div>
           <div class="panel-footer">
-            <div class="input-group">
-              <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-              <span class="input-group-btn">
-                  <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
-              </span>
-            </div>
+            <form name="messageForm" ng-submit="sendMessage()">
+              <div class="input-group">
+                <input ng-model="message" name="message" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." required>
+                <span class="input-group-btn">
+                    <button ng-disabled="messageForm.$invalid" class="btn btn-warning btn-sm" id="btn-chat" type="submit">Send</button>
+                </span>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -55,8 +58,13 @@
   </div>
 
 
+  <script src="lib/angular/angular.js"></script>
   <script src="lib/socket.io-client/dist/socket.io.js"></script>
-  <script src="lib/jquery/jquery.min.js"></script>
+
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/services.js"></script>
+  <script src="javascripts/controllers.js"></script>
+  <script src="javascripts/init.js"></script>
 </body>
 
 </html>
