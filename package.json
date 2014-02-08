@@ -1,9 +1,13 @@
 {
-    "name" : "chatrooms",
-    "version" : "0.1.0",
-    "description" : "chat app",
-    "dependencies" : {
+    "name": "chatrooms",
+    "version": "0.1.0",
+    "description": "chat app",
+    "dependencies": {
         "socket.io" : "~0.9.6",
         "mime" : "~1.2.7"
+    },
+    "devDependencies" : {
+        "grunt-contrib-jshint": "~0.7.1",
+        "grunt-contrib-watch": "~0.5.2"
     }
 }
