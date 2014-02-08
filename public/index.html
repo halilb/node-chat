@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>chat</title>
 
   <link rel="stylesheet" href="lib/bootstrap-css/css/bootstrap.css">
@@ -15,22 +16,28 @@
         <div class="panel panel-primary">
           <div class="panel-heading">
             <span class="glyphicon glyphicon-comment"></span> Chat
-            <span class="pull-right">Your nickname is: {{nickName}}</span>
           </div>
           <div class="panel-body">
-            <ul id="messages" class="chat">
-              <li ng-repeat="message in messages" class="left clearfix">
-                <div class="chat-body clearfix">
-                  <div class="header">
-                    <strong class="primary-font">{{message.author}}</strong>
-                    <small class="pull-right text-muted">
-                        <span class="glyphicon glyphicon-time"></span>xx mins ago
-                    </small>
+            <div class="col-md-8">
+              <ul id="messages" class="chat">
+                <li ng-repeat="message in messages" ng-class="{bold:message.system}" class="left clearfix">
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">{{message.author}}</strong>
+                      <small class="pull-right text-muted">
+                          <span class="glyphicon glyphicon-time"></span>xx mins ago
+                      </small>
+                    </div>
+                    <p>{{message.content}}</p>
                   </div>
-                  <p>{{message.content}}</p>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="users col-md-4">
+              <ul>
+                
+              </ul>
+            </div>
           </div>
           <div class="panel-footer">
             <form name="messageForm" ng-submit="sendMessage()">

@@ -24,5 +24,10 @@ angular.module('chat.system').controller('ChatCtrl', ['$scope', 'Socket', functi
 
     socket.on('nameResult', function(data) {
         $scope.nickName = data.name;
+
+        $scope.messages.push({
+            content: 'Welcome, ' + data.name,
+            system: true
+        });
     });
 }]);

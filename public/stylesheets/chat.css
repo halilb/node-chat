@@ -1,8 +1,17 @@
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .users { display: none; }
+}
+
+.bold {
+    font-weight: bolder;
+}
+
 .chat
 {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 80%;
 }
 
 .chat li
