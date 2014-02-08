@@ -1,6 +1,10 @@
 'use strict';
 
-angular.module('chat', ['chat.socket', 'chat.system']);
+angular.module('chat', [
 
-angular.module('chat.socket', []);
-angular.module('chat.system', []);
+    // 3rd parties
+    'btford.socket-io'
+]).
+factory('socket', function(socketFactory) {
+    return socketFactory();
+});

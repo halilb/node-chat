@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('chat.system').controller('ChatCtrl', ['$scope', 'Socket', function($scope, socket) {
+angular.module('chat').controller('ChatCtrl', ['$scope', 'socket', function($scope, socket) {
     $scope.message = '';
     $scope.messages = [];
 
