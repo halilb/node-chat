@@ -3,7 +3,8 @@
   "esnext": true,
   "globals": {
     "angular": true,
-    "module": true
+    "module": true,
+    "io": true
   },
   "globalstrict": true,
   "quotmark": true,

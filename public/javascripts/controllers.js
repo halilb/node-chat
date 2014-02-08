@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('chat.system').controller('ChatCtrl', ['$scope', 'Socket', function($scope, socket) {
-    $scope.message = "";
+    $scope.message = '';
     $scope.messages = [];
 
     $scope.sendMessage = function() {
@@ -14,11 +14,10 @@ angular.module('chat.system').controller('ChatCtrl', ['$scope', 'Socket', functi
             message: $scope.message
         });
 
-        $scope.message = "";
+        $scope.message = '';
     };
 
     socket.on('send:message', function(message) {
-        console.log(message);
         $scope.messages.push(message);
     });
 

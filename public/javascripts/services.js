@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('chat.socket').factory('Socket', ['$rootScope', function ($rootScope) {
     var socket = io.connect();
     return {
@@ -17,7 +19,7 @@ angular.module('chat.socket').factory('Socket', ['$rootScope', function ($rootSc
                         callback.apply(socket, args);
                     }
                 });
-            })
+            });
         }
     };
 }]);
