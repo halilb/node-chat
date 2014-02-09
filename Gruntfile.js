@@ -19,14 +19,22 @@ module.exports = function(grunt) {
           livereload: true
         }
       }
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: false
+      }
     }
   });
 
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('test', ['jshint', 'karma']);
 
   grunt.registerTask('default', ['watch']);
 

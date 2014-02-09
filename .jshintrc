@@ -4,7 +4,12 @@
   "globals": {
     "angular": true,
     "module": true,
-    "io": true
+    "io": true,
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "beforeEach": true,
+    "inject": true
   },
   "globalstrict": true,
   "quotmark": true,
